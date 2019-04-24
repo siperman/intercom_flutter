@@ -73,6 +73,10 @@ class Intercom {
     return _channel.invokeMethod('logout');
   }
 
+  static Future<dynamic> logEvent() {
+    return _channel.invokeMethod('logEvent');
+  }
+
   static Future<dynamic> setLauncherVisibility(IntercomVisibility visibility) {
     String visibilityString =
         visibility == IntercomVisibility.visible ? 'VISIBLE' : 'GONE';

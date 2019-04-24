@@ -95,6 +95,16 @@
         [Intercom logout];
         result(@"Logged out");
     }
+    else if([@"logEvent" isEqualToString:call.method]) {
+            [Intercom logEventWithName:@"ordered_item" metaData: @{
+                @"order_date": @1392036272,
+                @"stripe_invoice": @"inv_3434343434",
+                @"order_number": @{
+                  @"value": @"3434-3434",
+                  @"url": @"https://example.org/orders/3434-3434"}
+             }];
+            result(@"logEvent");
+        }
     else {
         result(FlutterMethodNotImplemented);
     }
